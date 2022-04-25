@@ -1,0 +1,7 @@
+__pycache__/
+venv/
+prj/
+test.py
+equip.sqlite
+connectdb.py
+create_db.py

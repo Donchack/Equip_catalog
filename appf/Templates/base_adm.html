@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+
+{% block secondhead %}
+<div class="div_nav2">
+    {% if the_part2=='customer' %}
+        <div class="div_left select">
+            <a class="a_nav" href="/customer_form">Заказчики</a>
+        </div>
+        {% else %}
+            <div class="div_left">
+                <a class="a_nav" href="/customer_form">Заказчики</a>
+            </div>
+    {% endif %}
+    {% if the_part2=='stat' %}
+        <div class="div_left select">
+            <a class="a_nav" href="/prj_stat_form">Статусы</a>
+        </div>
+        {% else %}
+            <div class="div_left">
+                <a class="a_nav" href="/prj_stat_form">Статусы</a>
+            </div>
+    {% endif %}
+    {% if the_part2=='region' %}
+        <div class="div_left select">
+            <a class="a_nav" href="/region_form">Регионы</a>
+        </div>
+        {% else %}
+            <div class="div_left">
+                <a class="a_nav" href="/region_form">Регионы</a>
+            </div>
+    {% endif %}
+</div>
+<div style="clear:both;"></div>
+<div class="div_sep"></div>
+{% block body %}
+
+{% endblock body %}
+{% endblock secondhead %}

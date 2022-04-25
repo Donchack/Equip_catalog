@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{ the_title }}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}" />
+    </head>
+    <body>
+        <div class="div_title">
+            МЕНЕДЖЕР ПРОЕКТОВ
+        </div>
+        <div class="div_nav1">
+            {% if the_part1=='prj' %}
+                <div class="select">
+                    <a class="a_nav" href="/list_prj_form">ПРОЕКТЫ</a>
+                </div>
+                {% else %}
+                    <div>
+                        <a class="a_nav" href="/list_prj_form">ПРОЕКТЫ</a>
+                    </div>
+            {% endif %}
+            {% if the_part1=='equip' %}
+                <div class="select">
+                    <a class="a_nav" href="/eqip_prices">ОБОРУДОВАНИЕ</a>
+                </div>
+                {% else %}
+                    <div>
+                        <a class="a_nav" href="/eqip_prices">ОБОРУДОВАНИЕ</a>
+                    </div>
+            {% endif %}
+            {% if the_part1=='adm' %}
+                <div class="select">
+                    <a class="a_nav" href="/admin">АДМИНИСТРИРОВАНИЕ</a>
+                </div>
+                {% else %}
+                <div>
+                    <a class="a_nav" href="/admin">АДМИНИСТРИРОВАНИЕ</a>
+                </div>
+            {% endif %}
+            
+        </div>
+        
+        <div style="clear:both;"></div>
+        <div class="div_line"></div>
+        {% block secondhead %}
+
+        {% endblock %}
+    </body>
+</html>

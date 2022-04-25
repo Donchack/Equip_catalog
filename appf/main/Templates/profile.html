@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block secondhead %}
+<div style="clear:both;"></div>
+<div class="form_text">
+    {% for flash_mes in get_flashed_messages() %}
+        {{ flash_mes }}
+    {% endfor %}
+</div>
+<div class="form_text">
+    {{ message }}
+</div>
+<div style="clear:both;"></div>
+
+{% endblock secondhead %}

@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+
+{% block secondhead %}
+<div class="div_nav2">
+    {% if the_part2=='prices' %}
+        <div class="div_left select">
+            <a class="a_nav" href="/eqip_prices">Каталог</a>
+        </div>
+        {% else %}
+            <div class="div_left">
+                <a class="a_nav" href="/eqip_prices">Каталог</a>
+            </div>
+    {% endif %}
+    {% if the_part2=='add' %}
+        <div class="div_left select">
+            <a class="a_nav" href="/add_eqip_form">Добавить</a>
+        </div>
+        {% else %}
+            <div class="div_left">
+                <a class="a_nav" href="/add_eqip_form">Добавить</a>
+            </div>
+    {% endif %}
+    {% if the_part2=='del' %}
+        <div class="div_left select">
+            <a class="a_nav" href="/del_eqip_form">Удалить</a>
+        </div>
+        {% else %}
+            <div class="div_left">
+                <a class="a_nav" href="/del_eqip_form">Удалить</a>
+            </div>
+    {% endif %}
+</div>
+<div style="clear:both;"></div>
+<div class="div_sep"></div>
+{% block body %}
+
+{% endblock body %}
+{% endblock secondhead %}

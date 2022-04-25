@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+
+{% block secondhead %}
+
+<div style="clear:both;"></div>
+<form method='POST' name="add" action={{ url_for(".login") }}>
+    {{ form.csrf_token }}
+    <div class="form_text">
+        {% for flash_mes in get_flashed_messages() %}
+            {{ flash_mes }}
+        {% endfor %}
+    </div>
+    <br>
+    <div class="div_nav1">
+        {{ form.user_login.label(class='form_text') }} {{ form.user_login(class='input_filtr') }}
+        {% for error in form.user_login.errors %}
+            {{ error }}
+        {% endfor %}
+    </div>
+    <br>
+    <div class="div_nav1">
+        {{ form.user_psw.label(class='form_text') }} {{ form.user_psw(class='input_filtr') }}
+        {% for error in form.user_psw.errors %}
+            {{ error }}
+        {% endfor %}
+    </div>
+    <br>
+    <div class="div_nav1">
+        {{ form.rememder.label(class='form_text') }} {{ form.rememder(class='input_filtr') }}
+        {% for error in form.rememder.errors %}
+            {{ error }}
+        {% endfor %}
+    </div>
+    <div class="div_float">
+        {{ form.submit(class='form_button') }}
+    </div>
+</form>
+<div style="clear:both;"></div>
+
+{{ message }}
+
+{% endblock secondhead %}
