@@ -13,5 +13,8 @@ app.config.from_object(
 # инициализирует расширения
 db = SQLAlchemy(app)
 # migrate = Migrate(app, db)
-from .main import main as main_blp
+from .admin import main as main_blp, login_manager
+
 app.register_blueprint(main_blp, url_prefix='')
+
+login_manager.init_app(app)
