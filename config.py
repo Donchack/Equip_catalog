@@ -16,7 +16,7 @@ class DevelopmentConfig(BaseConfig):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get(
             'DEVELOPMENT_DATABASE_URI',
-            DB_URI['postgre_uri']
+            DB_URI['mysql_uri']
     )
 
 

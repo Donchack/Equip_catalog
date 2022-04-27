@@ -1,8 +1,12 @@
+import os 
 from flask import Flask
-from flask_migrate import Migrate
+# from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 # from flask_script import Manager, Command, Shell
-import os, config
+import config
+
+
+
 
 # создание экземпляра приложения
 app = Flask(__name__)
@@ -13,6 +17,8 @@ app.config.from_object(
 # инициализирует расширения
 db = SQLAlchemy(app)
 # migrate = Migrate(app, db)
+
+import appf.models
 from .admin import main as main_blp, login_manager
 
 app.register_blueprint(main_blp, url_prefix='')
