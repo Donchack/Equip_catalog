@@ -39,7 +39,7 @@ class Manufacturer(db.Model):
     def __repr__(self):
         return f'<{{self.id}}:{{self.short_name}}>'
 
-db.create_all()
+# db.create_all()
 
 
 

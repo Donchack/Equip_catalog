@@ -6,8 +6,6 @@ from flask_sqlalchemy import SQLAlchemy
 import config
 
 
-
-
 # создание экземпляра приложения
 app = Flask(__name__)
 app.config.from_object(
@@ -21,6 +19,9 @@ db = SQLAlchemy(app)
 import appf.models
 from .admin import main as main_blp, login_manager
 
+import appf.views
+login_manager.init_app(app)
+
 app.register_blueprint(main_blp, url_prefix='')
 
-login_manager.init_app(app)
+
